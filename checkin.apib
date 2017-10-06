@@ -1,0 +1,400 @@
+FORMAT: 1A
+
+
+# Group Project
+This section groups projects resources.
+
+
+## Project Collection [/projects/{?tag_id}]
+
+
++ Parameters
+    + tag_id: 1 (number, optional)
+
+### Retrieve projects [GET]
+Return project collection.
+
+
++ Response 200 (application/json)
+
+
+    + Attributes (ProjectArray)
+
+
+### Create a project [POST]
+
+
++ Attributes (ProjectBase)
+
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+
++ Attributes (ProjectGet)
+
+## Project Detail [/projects/{id}]
+
+
++ Parameters
+    + id (number)
+
+
+### Retrieve a project [GET]
+
+
++ Response 200 (application/json)
+    + Attributes (ProjectGet)
+
+
+### Modify a Project [PUT]
+
+
++ Attributes (ProjectBase)
+
+
++ Request (application/json)
+
+
++ Response 200 (application/json)
+    + Attributes (ProjectGet)
+
+
+### Delete a Project [DELETE]
+
+
++ Response 204
+
+
+# Group Tag
+This section groups tags resources.
+
+
+## Tag Collection [/tags/]
+
+### Retrieve tags [GET]
+Return tag collection.
+
+
++ Response 200 (application/json)
+
+
+    + Attributes (TagArray)
+
+### Create a tag [POST]
+
+
++ Attributes (TagBase)
+
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+
++ Attributes (TagGet)
+
+## Tag Detail [/tags/{id}]
+
+
++ Parameters
+    + id (number)
+
+
+### Retrieve a tag [GET]
+
+
++ Response 200 (application/json)
+    + Attributes (TagGet)
+
+
+### Modify a Tag [PUT]
+
+
++ Attributes (TagBase)
+
+
++ Request (application/json)
+
+
++ Response 200 (application/json)
+    + Attributes (TagGet)
+
+
+### Delete a Tag [DELETE]
+
+
++ Response 204
+
+
+# Group UserProject
+This section groups userprojects resources.
+
+
+## UserProject Collection [/userprojects/]
+
+### Retrieve userprojects [GET]
+Return tag collection.
+
+
++ Response 200 (application/json)
+
+
+    + Attributes (UserProjectArray)
+
+### Create a userproject [POST]
+
+
++ Attributes (UserProjectBase)
+
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+
++ Attributes (UserProjectGet)
+
+## Tag Detail [/userprojects/{id}]
+
+
++ Parameters
+    + id (number)
+
+
+### Retrieve a userproject [GET]
+
+
++ Response 200 (application/json)
+    + Attributes (UserProjectGet)
+
+
+### Modify a userproject [PUT]
+
+
++ Attributes (UserProjectBase)
+
+
++ Request (application/json)
+
+
++ Response 200 (application/json)
+    + Attributes (UserProjectGet)
+
+
+### Delete a userproject [DELETE]
+
+
++ Response 204
+
+
+# Group Record
+This section groups records resources.
+
+
+## Record Collection [/records/]
+
+### Retrieve records [GET]
+Return record collection.
+
+
++ Response 200 (application/json)
+
+
+    + Attributes (RecordArray)
+
+### Create a record [POST]
+
+
++ Attributes (RecordBase)
+
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+
++ Attributes (RecordGet)
+
+## Record Detail [/records/{id}]
+
+
++ Parameters
+    + id (number)
+
+
+### Retrieve a record [GET]
+
+
++ Response 200 (application/json)
+    + Attributes (RecordGet)
+
+
+### Modify a Record [PUT]
+
+
++ Attributes (RecordBase)
+
+
++ Request (application/json)
+
+
++ Response 200 (application/json)
+    + Attributes (RecordGet)
+
+
+### Delete a Record [DELETE]
+
+
++ Response 204
+
+
+# Group Comment
+This section groups records resources.
+
+
+## Comment Collection [/comments/]
+
+### Retrieve comments [GET]
+Return comment collection.
+
+
++ Response 200 (application/json)
+
+
+    + Attributes (CommentArray)
+
+### Create a comment [POST]
+
+
++ Attributes (CommentBase)
+
+
++ Request (application/json)
+
++ Response 200 (application/json)
+
+
++ Attributes (CommentGet)
+
+## Comment Detail [/comments/{id}]
+
+
++ Parameters
+    + id (number)
+
+
+### Retrieve a comment [GET]
+
+
++ Response 200 (application/json)
+    + Attributes (CommentGet)
+
+
+### Modify a Comment [PUT]
+
+
++ Attributes (CommentBase)
+
+
++ Request (application/json)
+
+
++ Response 200 (application/json)
+    + Attributes (CommentGet)
+
+
+### Delete a Comment [DELETE]
+
+
++ Response 204
+
+
+# Data Structures
+
+
+## ProjectBase (object)
++ name: `InMyLife` (string, required)
++ notice: `record life` (string, optional)
++ tag_id: 2 (number, optional)
++ duration: 365 (number, optional)
++ frequency: 1 (number, optional)
++ remedy_pemission: false (boolean, optional)
++ diary_need: false (boolean, optional)
+
+## ProjectGet (ProjectBase)
++ id: 1 (number)
++ created_at: `2012-07-16T17:25:47Z`
++ updated_at: `2017-07-16T11:22:41Z`
+
+
+## ProjectArray (object)
++ Attributes (array[ProjectGet])
+
+
+## TagBase (object)
++ name: `日記` (string, required)
+
+
+## TagGet (TagBase)
++ id: 1 (number)
++ created_at: `2012-07-16T17:25:47Z`
++ updated_at: `2017-07-16T11:22:41Z`
+
+
+## TagArray (object)
++ Attributes (array[TagGet])
+
+
+## UserProjectBase (object)
++ project_id: 1 (number, required)
++ status: 1 (number, optional)
+
+
+    表明正在申請/已加入/退出
+
+
+## UserProjectGet (UserProjectBase)
++ id: 1 (number)
++ user_id: 11 (number)
++ created_at: `2012-07-16T17:25:47Z`
++ updated_at: `2017-07-16T11:22:41Z`
+
+
+## UserProjectArray (object)
++ Attributes (array[UserProjectGet])
+
+
+## RecordBase (object)
++ project_id: 1 (number, required)
+
+
+## RecordGet (RecordBase)
++ id: 1 (number)
++ user_id: 12 (number)
++ checkin_date: `2017-09-28`
++ checkin_time: `2017-09-28T11:22:41Z`
++ num_checkin_days: 20 (number)
++ created_at: `2012-07-16T17:25:47Z`
++ updated_at: `2017-07-16T11:22:41Z`
+
+
+## RecordArray (object)
++ Attributes (array[RecordGet])
+
+
+## CommentBase (object)
++ content: `today nothing happended` (string, optional)
+
+
+## CommentGet (CommentBase)
++ id: 1 (number)
++ user_id: 12 (number)
++ diary_id: 365 (number)
++ created_at: `2012-07-16T17:25:47Z`
++ updated_at: `2017-07-16T11:22:41Z`
+
+
+## CommentArray (object)
++ Attributes (array[RecordGet])
